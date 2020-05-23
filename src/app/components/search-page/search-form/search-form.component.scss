@@ -1,0 +1,10 @@
+@import "../../../../styles/variables";
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.validation-error {
+  color: map-get($red-palette, 500);
+}

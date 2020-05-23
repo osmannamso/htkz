@@ -1,0 +1,7 @@
+@import "src/styles/variables";
+
+.tour-objects {
+  p {
+    color: map-get($green-palette, 500);
+  }
+}

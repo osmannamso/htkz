@@ -1,0 +1,5 @@
+<app-search-form (searchResult)="gotSearchResult($event)"></app-search-form>
+<div class="tour-objects" *ngIf="searchResult">
+  <p>{{ foundMessage }}</p>
+  <app-tour-object [tours]="searchResult.tours"></app-tour-object>
+</div>

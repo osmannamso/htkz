@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "htkz"
+    }
+  },
+  "defaultProject": "htkz",
+  "cli": {
+    "analytics": false
+  }
 }

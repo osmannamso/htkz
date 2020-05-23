@@ -1,0 +1,34 @@
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <label>
+    Откуда
+    <select formControlName="departCity" (ngModelChange)="cityChanged($event)">
+      <option *ngFor="let city of cities" [value]="city.id">
+        {{ city.name }}
+      </option>
+    </select>
+  </label>
+  <label>
+    Куда
+    <select formControlName="country">
+      <option *ngFor="let country of cities[selectedCityIndex].directions" [value]="country.id">
+        {{ country.name }}
+      </option>
+    </select>
+  </label>
+  <label>
+    Дата вылета
+    <input type="date" formControlName="date" />
+  </label>
+  <label>
+    Минимальное количество ночей
+    <input type="number" formControlName="nights" />
+  </label>
+  <label>
+    Максимальное количество ночей
+    <input type="number" formControlName="nightsTo" />
+  </label>
+  <p class="validation-error" *ngIf="validationMessage" [innerHTML]="validationMessage"></p>
+  <button type="submit">
+    Поиск
+  </button>
+</form>

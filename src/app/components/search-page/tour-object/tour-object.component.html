@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>Название отеля</th>
+    <th>Цена</th>
+  </tr>
+  <tr *ngFor="let tour of tours">
+    <td>{{ tour.hotelName }}</td>
+    <td>{{ tour.price }} {{ tour.currency }}</td>
+  </tr>
+</table>
