@@ -9,6 +9,8 @@ import { TourObjectComponent } from './components/search-page/tour-object/tour-o
 import {registerLocaleData} from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { SearchPageComponent } from './components/search-page/search-page.component';
+import { TestPageComponent } from './components/test-page/test-page.component';
+import {AppRoutingModule} from './app-routing.module';
 registerLocaleData(localeRu);
 
 @NgModule({
@@ -16,12 +18,14 @@ registerLocaleData(localeRu);
     AppComponent,
     SearchFormComponent,
     TourObjectComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    TestPageComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'ru-RU'}

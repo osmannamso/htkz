@@ -1,0 +1,185 @@
+@import "src/styles/variables";
+
+.hotel-item-main {
+  padding: 10px;
+  border: 1px solid map-get($gray-palette, 600);
+  border-radius: 3px;
+  margin-top: 15px;
+
+  .hotel-item-picture-block {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .number-rating {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-family: "Gotham Pro", serif;
+      font-size: 17px;
+      background-color: map-get($green-palette, 200);
+      color: $white;
+      padding: 6px 12px;
+      border-radius: 25px;
+    }
+
+    .discount {
+      position: absolute;
+      top: 15px;
+      right: 8px;
+      font-family: "Gotham Pro", serif;
+      font-size: 17px;
+      background-color: map-get($red-palette, 200);
+      color: $white;
+      padding: 6px;
+      border-radius: 3px;
+    }
+
+    .hotel-item-info {
+      position: absolute;
+      bottom: 20px;
+      left: 15px;
+
+      .star-rating-block {
+        .i-star, .i-unstar {
+          margin-left: 2px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .hotel-item-title {
+        font-family: "Gotham Pro", serif;
+        font-size: 19px;
+        color: $white;
+        text-transform: uppercase;
+        margin-top: 5px;
+      }
+
+      .hotel-item-subtitle {
+        font-family: "Gotham Pro", serif;
+        color: map-get($gray-palette, 500);
+        margin-top: 5px;
+        font-size: 15px;
+      }
+    }
+
+    .hotel-item-recommendation {
+      position: absolute;
+      right: 8px;
+      bottom: -10px;
+      background-color: map-get($green-palette, 200);
+      color: $white;
+      font-family: "Gotham Pro", serif;
+      font-size: 13px;
+      border-radius: 3px;
+      padding: 7px 11px;
+      text-transform: uppercase;
+    }
+  }
+
+  .hotel-night-info, .hotel-flight-info {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: "Gotham Pro", serif;
+    font-weight: 600;
+  }
+}
+
+.hotel-item-additional {
+  display: flex;
+
+  .left-additional {
+    padding: 10px 15px;
+    width: 65%;
+    border-left: 1px solid map-get($gray-palette, 600);
+    border-right: 1px solid map-get($gray-palette, 600);
+
+    .guest-choice {
+      color: map-get($blue-palette, 600);
+      text-decoration: underline;
+      font-family: "Gotham Pro", serif;
+      font-size: 17px;
+    }
+
+    .price-block {
+      font-family: "Gotham Pro", serif;
+      font-weight: 600;
+      margin-top: 5px;
+      font-size: 20px;
+    }
+  }
+
+  .right-additional {
+    width: 35%;
+    border-right: 1px solid map-get($gray-palette, 600);
+    padding: 7px 10px;
+
+    .credit-price {
+      background-color: map-get($red-palette, 200);
+      color: $white;
+      text-align: center;
+      padding: 6px;
+      border-radius: 3px;
+      font-family: "Gotham Pro", serif;
+    }
+
+    .credit-month {
+      margin-top: 5px;
+      font-family: "Gotham Pro", serif;
+      font-weight: 600;
+    }
+  }
+}
+
+.hotel-item-bottom {
+  background-color: map-get($yellow-palette, 500);
+  padding: 25px 0;
+  text-align: center;
+  text-decoration: underline;
+  font-family: "Gotham Pro", serif;
+  font-weight: 600;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: map-get($blue-palette, 500);
+
+  .footer-item {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 8px 0;
+    border-left: 1px solid rgba($white, 0.1);
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    img {
+      width: 25px;
+    }
+
+    .item-title {
+      font-family: "Open Sans", serif;
+      text-transform: uppercase;
+      font-size: 15px;
+      color: $white;
+    }
+
+    .item-subtitle {
+      font-family: "Open Sans", serif;
+      font-size: 12px;
+      color: rgba($white, 0.5);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.icon {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &.i-star {
+    width: 22px;
+    height: 22px;
+    background-image: url("assets/icons/active-star.svg");
+  }
+
+  &.i-unstar {
+    width: 22px;
+    height: 22px;
+    background-image: url("assets/icons/inactive-star.svg");
+  }
+
+  &.i-like {
+    width: 15px;
+    height: 15px;
+    background-image: url("assets/icons/like.svg");
+  }
+
+  &.i-bottom-arrow {
+    width: 11px;
+    height: 7px;
+    background-image: url("assets/icons/bottom-arrow.svg");
+  }
+}
