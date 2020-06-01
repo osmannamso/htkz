@@ -1,92 +1,106 @@
 @import "src/styles/variables";
 
-.hotel-item-main {
-  padding: 10px;
-  border: 1px solid map-get($gray-palette, 600);
-  border-radius: 3px;
+.hotel-item-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+.hotel-item {
+  max-width: 400px;
+  flex: 1 0 100%;
+  min-width: 300px;
+  padding: 0 10px;
   margin-top: 15px;
 
-  .hotel-item-picture-block {
-    position: relative;
+  .hotel-item-main {
+    padding: 10px;
+    border: 1px solid map-get($gray-palette, 600);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
-    img {
-      width: 100%;
-    }
+    .hotel-item-picture-block {
+      position: relative;
 
-    .number-rating {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-family: "Gotham Pro", serif;
-      font-size: 17px;
-      background-color: map-get($green-palette, 200);
-      color: $white;
-      padding: 6px 12px;
-      border-radius: 25px;
-    }
+      img {
+        width: 100%;
+      }
 
-    .discount {
-      position: absolute;
-      top: 15px;
-      right: 8px;
-      font-family: "Gotham Pro", serif;
-      font-size: 17px;
-      background-color: map-get($red-palette, 200);
-      color: $white;
-      padding: 6px;
-      border-radius: 3px;
-    }
+      .number-rating {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-family: "Gotham Pro", serif;
+        font-size: 17px;
+        background-color: map-get($green-palette, 200);
+        color: $white;
+        padding: 6px 12px;
+        border-radius: 25px;
+      }
 
-    .hotel-item-info {
-      position: absolute;
-      bottom: 20px;
-      left: 15px;
+      .discount {
+        position: absolute;
+        top: 15px;
+        right: 8px;
+        font-family: "Gotham Pro", serif;
+        font-size: 17px;
+        background-color: map-get($red-palette, 200);
+        color: $white;
+        padding: 6px;
+        border-radius: 3px;
+      }
 
-      .star-rating-block {
-        .i-star, .i-unstar {
-          margin-left: 2px;
+      .hotel-item-info {
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
 
-          &:first-child {
-            margin-left: 0;
+        .star-rating-block {
+          .i-star, .i-unstar {
+            margin-left: 2px;
+
+            &:first-child {
+              margin-left: 0;
+            }
           }
+        }
+
+        .hotel-item-title {
+          font-family: "Gotham Pro", serif;
+          font-size: 19px;
+          color: $white;
+          text-transform: uppercase;
+          margin-top: 5px;
+        }
+
+        .hotel-item-subtitle {
+          font-family: "Gotham Pro", serif;
+          color: map-get($gray-palette, 500);
+          margin-top: 5px;
+          font-size: 15px;
         }
       }
 
-      .hotel-item-title {
-        font-family: "Gotham Pro", serif;
-        font-size: 19px;
+      .hotel-item-recommendation {
+        position: absolute;
+        right: 8px;
+        bottom: -10px;
+        background-color: map-get($green-palette, 200);
         color: $white;
-        text-transform: uppercase;
-        margin-top: 5px;
-      }
-
-      .hotel-item-subtitle {
         font-family: "Gotham Pro", serif;
-        color: map-get($gray-palette, 500);
-        margin-top: 5px;
-        font-size: 15px;
+        font-size: 13px;
+        border-radius: 3px;
+        padding: 7px 11px;
+        text-transform: uppercase;
       }
     }
 
-    .hotel-item-recommendation {
-      position: absolute;
-      right: 8px;
-      bottom: -10px;
-      background-color: map-get($green-palette, 200);
-      color: $white;
+    .hotel-night-info, .hotel-flight-info {
+      margin-top: 5px;
+      margin-left: 5px;
       font-family: "Gotham Pro", serif;
-      font-size: 13px;
-      border-radius: 3px;
-      padding: 7px 11px;
-      text-transform: uppercase;
+      font-weight: 600;
     }
-  }
-
-  .hotel-night-info, .hotel-flight-info {
-    margin-top: 5px;
-    margin-left: 5px;
-    font-family: "Gotham Pro", serif;
-    font-weight: 600;
   }
 }
 
@@ -140,29 +154,75 @@
   background-color: map-get($yellow-palette, 500);
   padding: 25px 0;
   text-align: center;
-  text-decoration: underline;
   font-family: "Gotham Pro", serif;
   font-weight: 600;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 .footer {
   position: fixed;
-  bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  bottom: -81px;
+  margin: 0 auto;
+  border-radius: 35px;
+  width: 400px;
   display: flex;
   background-color: map-get($blue-palette, 500);
+  transition: 1s;
+
+  &:hover {
+    bottom: 10px;
+
+    &:before {
+      opacity: 0;
+    }
+  }
+
+  &:before {
+    content: "Показать";
+    text-align: center;
+    color: $white;
+    display: block;
+    width: 100px;
+    height: 30px;
+    background: map-get($blue-palette, 500);
+    position: absolute;
+    top: -29px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    cursor: pointer;
+    transition: opacity 0s 1s;
+    padding-top: 5px;
+    text-decoration: underline;
+    font-family: "Gotham Pro", serif;
+    font-size: 15px;
+  }
 
   .footer-item {
     flex: 1 1 100%;
     text-align: center;
     padding: 8px 0;
     border-left: 1px solid rgba($white, 0.1);
+    cursor: pointer;
 
     &:first-child {
       border-left: 0;
+    }
+
+    &:hover {
+      .item-title {
+        color: map-get($gray-palette, 500);
+      }
     }
 
     img {
@@ -180,6 +240,36 @@
       font-family: "Open Sans", serif;
       font-size: 12px;
       color: rgba($white, 0.5);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hotel-item-wrap {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+
+  .hotel-item {
+    padding: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    bottom: 0;
+    border-radius: 0;
+
+    &:hover {
+      bottom: 0;
+    }
+
+    &:before {
+      display: none;
     }
   }
 }
